@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@plasmohq/messaging':
+        specifier: ^0.6.2
+        version: 0.6.2(react@18.2.0)
+      '@plasmohq/storage':
+        specifier: ^1.12.0
+        version: 1.12.0(react@18.2.0)
       plasmo:
         specifier: 0.89.3
         version: 0.89.3(@swc/core@1.8.0(@swc/helpers@0.5.13))(@swc/helpers@0.5.13)(lodash@4.17.21)(postcss@8.4.47)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1016,6 +1022,14 @@ packages:
   '@plasmohq/init@0.7.0':
     resolution: {integrity: sha512-P75g48dqOGneJ+n0AcqnLE/TYflcaPc3B7h6EopnCBBYUDnCNBMwYmKAkaf5pnhsEB0ybPS6TU1C2DTGfqaW7A==}
 
+  '@plasmohq/messaging@0.6.2':
+    resolution: {integrity: sha512-CGfcvfVE0wsN/Y/i/jV0nwjkwh2gBCEujZFhLoxJ12N0ScoP3JVEIvUxJSFsAD4ylBQ8IjD2FyjQozwiSxWc4Q==}
+    peerDependencies:
+      react: ^16.8.6 || ^17 || ^18
+    peerDependenciesMeta:
+      react:
+        optional: true
+
   '@plasmohq/parcel-bundler@0.5.6':
     resolution: {integrity: sha512-kjwj5tQUhdAK00AxXOzgqJ2jryZg4X6aleYAcjbREPzVMqKEu1NrNSNy5VGAfNRG6NCT6ZYg39ZCyuUOR2lEsQ==}
     engines: {node: '>= 16.0.0', parcel: '>= 2.7.0'}
@@ -1078,6 +1092,14 @@ packages:
   '@plasmohq/parcel-transformer-vue@0.5.0':
     resolution: {integrity: sha512-/3oVbajt+DRqtbM0RkKFtfyZR8DVjcsYpj1jHqPParGVBiXwgP0D/8Bj5p5/5Iqihs08gzasTcjKcwQKKdj0og==}
     engines: {parcel: '>= 2.7.0'}
+
+  '@plasmohq/storage@1.12.0':
+    resolution: {integrity: sha512-LoCyO0PXl609ee8QKVEwVpkTyD/8WjYQhd0sxFomLxbdxsZC0LD4n8nv4nSegP5X8lYQBQnR/LMq4ZXoQh87wA==}
+    peerDependencies:
+      react: ^16.8.6 || ^17 || ^18
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   '@pnpm/config.env-replace@1.1.0':
     resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
@@ -2406,6 +2428,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@5.0.3:
+    resolution: {integrity: sha512-I7X2b22cxA4LIHXPSqbBCEQSL+1wv8TuoefejsX4HFWyC6jc5JG7CEaxOltiKjc1M+YCS2YkrZZcj4+dytw9GA==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+
   napi-build-utils@1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
 
@@ -2534,6 +2561,10 @@ packages:
   pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
+
+  pify@6.1.0:
+    resolution: {integrity: sha512-KocF8ve28eFjjuBKKGvzOBGzG8ew2OqOOSxTTZhirkzH7h3BI1vyzqlR0qbfcDBve1Yzo3FVlWUAtCRrbVN8Fw==}
+    engines: {node: '>=14.16'}
 
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
@@ -4113,6 +4144,12 @@ snapshots:
 
   '@plasmohq/init@0.7.0': {}
 
+  '@plasmohq/messaging@0.6.2(react@18.2.0)':
+    dependencies:
+      nanoid: 5.0.3
+    optionalDependencies:
+      react: 18.2.0
+
   '@plasmohq/parcel-bundler@0.5.6':
     dependencies:
       '@parcel/core': 2.9.3
@@ -4407,6 +4444,12 @@ snapshots:
       - velocityjs
       - walrus
       - whiskers
+
+  '@plasmohq/storage@1.12.0(react@18.2.0)':
+    dependencies:
+      pify: 6.1.0
+    optionalDependencies:
+      react: 18.2.0
 
   '@pnpm/config.env-replace@1.1.0': {}
 
@@ -5682,6 +5725,8 @@ snapshots:
 
   nanoid@3.3.7: {}
 
+  nanoid@5.0.3: {}
+
   napi-build-utils@1.0.2: {}
 
   needle@3.3.1:
@@ -5798,6 +5843,8 @@ snapshots:
 
   pify@4.0.1:
     optional: true
+
+  pify@6.1.0: {}
 
   pirates@4.0.6: {}
 
